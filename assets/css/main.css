@@ -3231,8 +3231,8 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 100%;
-			height: 100%;
+			width: 100vw;
+			height: 100vh;
 			/* object-fit:contain; */
 			background-color: #212931;
 			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg"); */
@@ -3243,6 +3243,9 @@ input, select, textarea {
 			/* background-repeat: repeat,								no-repeat,													no-repeat; */
 			/* background-attachment: scroll,								scroll,														scroll; */
 			z-index: -1;
+			background-size:     cover;                      /* <------ */
+			background-repeat:   no-repeat;
+			background-position: center center;
 		}
 
 			#wrapper > .bg.fixed {
@@ -4699,4 +4702,12 @@ input, select, textarea {
 		align-items: center;
 		margin-left: 30vw;
 
+	}
+
+	#cool-effect{
+		font-family: "Space Mono", monospace;
+	}
+
+	.vid:hover{
+		transform: scale(1.3);
 	}

@@ -256,3 +256,60 @@
 		}
 
 })(jQuery);
+
+//hyperplexed cool letter effect
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let iterations = 0;
+document.querySelector("h1").onmouseover = (event) => {
+    const letterChangers = setInterval(() => {
+        event.target.innerText = event.target.innerText.split("")
+        .map((letter, index) => {
+            if (index <= iterations) {
+                return event.target.dataset.value[index];
+                //note: for this to work, make sure to have a data-set value in the html element this is pointing to
+            }
+            else {
+                return letters[Math.floor(Math.random() * 26)]
+            }
+        })
+        .join("")
+    if(iterations >= 9){
+        clearInterval(letterChangers);
+        iterations = 0;
+    }
+    iterations += 1/3;
+    }, 30)
+}
+
+//video play on mouseover
+ let clipAirbnz = document.querySelector(".vid-airbnz")
+ clipAirbnz.addEventListener("mouseover", function (e) {
+     clipAirbnz.play();
+ })
+ clipAirbnz.addEventListener("mouseout", function (e) {
+     clipAirbnz.pause();
+ })
+
+ let clipSpaceBubbles = document.querySelector(".vid-space-bubbles")
+ clipSpaceBubbles.addEventListener("mouseover", function (e) {
+     clipSpaceBubbles.play();
+ })
+ clipSpaceBubbles.addEventListener("mouseout", function (e) {
+     clipSpaceBubbles.pause();
+ })
+
+ let clipQuokka = document.querySelector(".vid-quokka")
+ clipQuokka.addEventListener("mouseover", function (e) {
+     clipQuokka.play();
+ })
+ clipQuokka.addEventListener("mouseout", function (e) {
+     clipQuokka.pause();
+ })
+
+ let clipBirdle = document.querySelector(".vid-birdle")
+ clipBirdle.addEventListener("mouseover", function (e) {
+     clipBirdle.play();
+ })
+ clipBirdle.addEventListener("mouseout", function (e) {
+     clipBirdle.pause();
+ })
